@@ -64,7 +64,7 @@ class DiagnosticIntroActivity: ReadingActivity() {
 
     private fun goToStageOne() {
         speak("This is the Wiring Harness Guided Diagnostic with fault code SPN 3563 / FMI 3", "intro", instruction)
-        pauseForASecond("stage1silence")
+        pauseForASecond()
     }
 
     private fun goToStageNine() {
@@ -89,12 +89,19 @@ class DiagnosticIntroActivity: ReadingActivity() {
         var voltage = 0
         when(spokenText) {
             "zero" -> voltage = 0
+            "0" -> voltage = 0
             "one" -> voltage = 1
+            "1" -> voltage = 1
             "two" -> voltage = 2
+            "2" -> voltage = 2
             "three" -> voltage = 3
+            "3" -> voltage = 3
             "four" -> voltage = 4
+            "4" -> voltage = 4
             "five" -> voltage = 5
+            "5" -> voltage = 5
             "six" -> voltage = 6
+            "6" -> voltage = 6
             else -> voltage = 200
         }
 
