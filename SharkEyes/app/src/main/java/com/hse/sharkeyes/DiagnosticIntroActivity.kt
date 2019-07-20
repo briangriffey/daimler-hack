@@ -2,9 +2,13 @@ package com.hse.sharkeyes
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.speech.RecognizerIntent
 import android.speech.tts.UtteranceProgressListener
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import kotlinx.android.synthetic.main.activity_diagnosticintro.*
+import java.util.*
 
 class DiagnosticIntroActivity: ReadingActivity() {
 
@@ -131,8 +135,12 @@ class DiagnosticIntroActivity: ReadingActivity() {
 
     override fun onInit(status: Int) {
         super.onInit(status)
-        tts.setOnUtteranceProgressListener(utteranceProgressListener)
-        goToStageOne()
+
+        spin_kit.visibility = VISIBLE
+        Handler().postDelayed({
+            spin_kit.visibility = INVISIBLE
+            tts.setOnUtteranceProgressListener(utteranceProgressListener)
+            goToStageOne()
+        }, 5000);
     }
 }
-
