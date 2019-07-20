@@ -6,6 +6,15 @@
               android:gravity="center_horizontal"
               android:padding="16dp">
 
+    <com.github.ybq.android.spinkit.SpinKitView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/colorAccent" />
+
     <TextView
             android:textSize="20sp"
             android:textStyle="bold"
