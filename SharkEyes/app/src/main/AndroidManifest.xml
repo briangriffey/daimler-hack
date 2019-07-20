@@ -19,6 +19,8 @@
 
         <activity android:name=".DiagnosticIntroActivity" />
 
+        <activity android:name=".WorkActivity" />
+
     </application>
 
 </manifest>

@@ -48,7 +48,6 @@ class DiagnosticIntroActivity: ReadingActivity() {
     }
 
     private fun goToStageFive() {
-
         //Do a thing here with whatever we're doing with the choosing the probe
         speak("Measure the voltage between pin 1 of the intake manifold pressure/temperature sensor harness connector and ground. What is the voltage?", "stage5instruction")
     }
@@ -60,6 +59,7 @@ class DiagnosticIntroActivity: ReadingActivity() {
 
     private fun goToStageTwo() {
         speak("Disconnect the intake manifold pressure/temperature sensor and inspect the harness side for bent, spread, or corroded terminals. Is any damage to the harness found?", "stage2instruction", instruction)
+        instruction.text = "Disconnect the intake manifold pressure/temperature sensor and inspect the harness side for bent, spread, or corroded terminals. Is any damage to the harness found?"
     }
 
     private fun goToStageOne() {

@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                val intent = Intent(this@MainActivity, DiagnosticIntroActivity::class.java)
+                val intent = Intent(this@MainActivity, WorkActivity::class.java)
                 startActivity(intent)
             }
         })

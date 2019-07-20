@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:orientation="vertical"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:background="?attr/selectableItemBackground">
+
+    <TextView
+            android:id="@+id/diagnosticCode"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Diagnostic Code:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+    />
+
+    <TextView
+            android:id="@+id/diagnosticCodeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/diagnosticCode"
+            app:layout_constraintTop_toBottomOf="@id/diagnosticCode"
+            android:textSize="20sp"
+            android:text="939-1000A"/>
+
+    <TextView
+            android:id="@+id/symptom"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Symptom:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/diagnosticCodeValue"
+            app:layout_constraintTop_toBottomOf="@id/diagnosticCodeValue"
+    />
+
+    <TextView
+            android:id="@+id/symptomExplanation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/symptom"
+            app:layout_constraintTop_toBottomOf="@id/symptom"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="20sp"
+            android:text="045-021-007 - WIRING HARNESS - ELECTRONIC ENGINE CONTROL"/>
+
+    <TextView
+            android:id="@+id/engineFamily"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Engine Family:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/symptomExplanation"
+            app:layout_constraintTop_toBottomOf="@id/symptomExplanation"
+    />
+
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintLeft_toLeftOf="@id/engineFamily"
+            app:layout_constraintTop_toBottomOf="@id/engineFamily"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="20sp"
+            android:text="DDEC16-DD15\nDDEC16-DD16\nDDEC16-DD13"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
