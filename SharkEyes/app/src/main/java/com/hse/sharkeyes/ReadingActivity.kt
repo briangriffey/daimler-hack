@@ -1,18 +1,24 @@
 package com.hse.sharkeyes
 
+import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import androidx.appcompat.app.AppCompatActivity
 
 class ReadingActivity: AppCompatActivity(), TextToSpeech.OnInitListener {
 
-    override fun onInit(status: Int) {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    lateinit var tts: TextToSpeech
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        tts = TextToSpeech(this, this)
     }
 
-    val tts = TextToSpeech(this, this)
-
     protected fun speak(text: String) {
-        tts.speak("Stephen, you are one sexy human being", TextToSpeech.QUEUE_FLUSH, null, "id")
+        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, "id")
+    }
+
+    override fun onInit(status: Int) {
+        
     }
 
     override fun onDestroy() {
