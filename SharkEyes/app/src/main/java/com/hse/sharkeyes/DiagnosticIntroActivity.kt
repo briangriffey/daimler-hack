@@ -63,8 +63,7 @@ class DiagnosticIntroActivity: ReadingActivity() {
     }
 
     private fun goToStageOne() {
-        speak("This is the Wiring Harness Guided Diagnostic with fault code SPN 3563 / FMI 3", "intro", instruction)
-        pauseForASecond()
+        speak("This is the Wiring Harness Guided Diagnostic with fault code SPN 3563 / FMI 3", "stage1silence", instruction)
     }
 
     private fun goToStageNine() {
