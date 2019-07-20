@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_work.*
+import androidx.recyclerview.widget.DividerItemDecoration
+
+
 
 class WorkActivity: AppCompatActivity() {
 
@@ -20,6 +23,12 @@ class WorkActivity: AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = WorkAdapter(this, layoutInflater)
+        recyclerView.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                DividerItemDecoration.VERTICAL
+            )
+        )
     }
 }
 
