@@ -65,13 +65,21 @@ class DiagnosticIntroActivity: ReadingActivity() {
     }
 
     private fun goToStageFourAndThreeQuarters() {
+        runOnUiThread({table_view.visibility = VISIBLE})
+        runOnUiThread({button.visibility = VISIBLE})
+        runOnUiThread({instructionBG.visibility = VISIBLE})
+
         speak("One of the following is what you're looking for, is it \n" +
-                "1. Intake Pressure/Temperature Sensor DKI470E16022-41 " +
+                "Option 1. Intake Pressure/Temperature Sensor DKI470E16022-41 " +
                 "or" +
-                "2. Intake Manifold Temperature Sensor DD13, DD15 and DD16 - DKI470E16022-37","stage4.75")
+                "Option 2. Intake Manifold Temperature Sensor DD13, DD15 and DD16 - DKI470E16022-37","stage4.75")
+
     }
 
     private fun goToStageFive() {
+        runOnUiThread({table_view.visibility = INVISIBLE})
+        runOnUiThread({button.visibility = INVISIBLE})
+        runOnUiThread({instructionBG.visibility = INVISIBLE})
         //Do a thing here with whatever we're doing with the choosing the probe
         speak("Measure the voltage between pin 1 of the intake manifold pressure/temperature sensor harness connector and ground. What is the voltage?", "stage5instruction", instruction)
     }
