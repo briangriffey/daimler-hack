@@ -97,6 +97,7 @@ class DiagnosticIntroActivity: ReadingActivity() {
 
     private fun goToStageNine() {
         speak("This component troubleshooting is complete with no trouble found. Go to the next component.", "stage9instruction")
+        runOnUiThread({spin_kit_wave.visibility = INVISIBLE})
     }
 
     private fun stageTwoDecision(spokenText: String?) {
