@@ -1,9 +1,14 @@
 package com.hse.sharkeyes
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
+import android.view.animation.AccelerateInterpolator
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_diagnosticintro.*
 
 abstract class ReadingActivity: AppCompatActivity(), TextToSpeech.OnInitListener {
 
@@ -15,8 +20,10 @@ abstract class ReadingActivity: AppCompatActivity(), TextToSpeech.OnInitListener
     }
 
     protected fun speak(text: String, id: String, instructionView: TextView? = null) {
+        crossfadeLoadingAnimation(endAlpha = 1f)
         tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, id)
         instructionView?.setText(text)
+        spin_kit_wave.visibility = VISIBLE
     }
 
     protected fun pauseForASecond(id: String) {
@@ -30,5 +37,11 @@ abstract class ReadingActivity: AppCompatActivity(), TextToSpeech.OnInitListener
     override fun onDestroy() {
         super.onDestroy()
         tts.shutdown()
+    }
+
+    private fun crossfadeLoadingAnimation(endAlpha: Float) {
+        spin_kit_wave.alpha = 1f - endAlpha
+        spin_kit_wave.animate().alpha(endAlpha).setDuration(7000)
+            .setInterpolator(AccelerateInterpolator()).start()
     }
 }
