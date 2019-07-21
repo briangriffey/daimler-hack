@@ -104,6 +104,7 @@ class DiagnosticIntroActivity: ReadingActivity() {
         when(spokenText) {
             "yes" -> goToStageThree()
             "no" -> goToStageFour()
+            else -> goToStageFour()
         }
     }
 
