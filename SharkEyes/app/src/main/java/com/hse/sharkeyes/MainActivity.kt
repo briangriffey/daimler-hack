@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         // (but fully transparent) during the animation.
         spin_kit.alpha = 0f
         spin_kit.visibility = View.VISIBLE
+        bluetooth.visibility = View.VISIBLE
 
         // Animate the content view to 100% opacity, and clear any animation
         // listener set on the view.
