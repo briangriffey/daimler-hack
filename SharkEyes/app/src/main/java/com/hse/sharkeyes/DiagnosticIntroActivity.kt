@@ -60,17 +60,18 @@ class DiagnosticIntroActivity: ReadingActivity() {
     }
 
     private fun goToStageFourAndAHalf() {
-        speak("Use the link below to determine the correct diagnostic probe part number for the Intake Manifold Pressure/Temperature Sensor.", "stage4.5instruction", instruction)
+        speak("Special Tool Required. Use the link below to determine the correct diagnostic probe part number for the Intake Manifold Pressure/Temperature Sensor.", "stage4.5instruction", instruction)
         pauseForASecond("stage4.5silence")
     }
 
     private fun goToStageFourAndThreeQuarters() {
         runOnUiThread({instructionBG.visibility = VISIBLE})
 
-        speak("One of the following is what you're looking for, is it \n" +
-                "Option 1. Intake Pressure/Temperature Sensor DKI470E16022-41 " +
-                "or" +
-                "Option 2. Intake Manifold Temperature Sensor DD13, DD15 and DD16 - DKI470E16022-37","stage4.75")
+        speak("I found some relevant manual entries. Please choose from the following options." +
+                "One of the following is what you're looking for, is it \n" +
+                "Option 1. Intake Pressure/Temperature Sensor " +
+                "Option 2. Intake Manifold Temperature Sensor DD13, DD15 and DD16 "+
+                "Option 3. Take me to the manual","stage4.75")
 
     }
 
