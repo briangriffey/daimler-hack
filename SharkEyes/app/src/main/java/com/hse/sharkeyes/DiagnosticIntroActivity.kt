@@ -1,12 +1,16 @@
 package com.hse.sharkeyes
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.speech.RecognizerIntent
 import android.speech.tts.UtteranceProgressListener
-import android.view.View.INVISIBLE
-import android.view.View.VISIBLE
+import android.view.View
+import android.view.View.*
+import android.view.animation.AccelerateInterpolator
+import androidx.core.view.ViewCompat.animate
 import kotlinx.android.synthetic.main.activity_diagnosticintro.*
 import java.util.*
 
@@ -131,16 +135,35 @@ class DiagnosticIntroActivity: ReadingActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diagnosticintro)
+        spin_kit.visibility = GONE
     }
 
     override fun onInit(status: Int) {
         super.onInit(status)
 
-        spin_kit.visibility = VISIBLE
+        spin_kit_wave.visibility = GONE
+        crossfadeBluetoothLoadingAnimation()
         Handler().postDelayed({
+            // TODO: Also hide bluetooth icon
             spin_kit.visibility = INVISIBLE
             tts.setOnUtteranceProgressListener(utteranceProgressListener)
             goToStageOne()
-        }, 5000);
+        }, 5000)}
+
+    private fun crossfadeBluetoothLoadingAnimation() {
+
+        val shortAnimationDuration = 6000
+        // Set the content view to 0% opacity but visible, so that it is visible
+        // (but fully transparent) during the animation.
+        spin_kit.alpha = 0f
+        spin_kit.visibility = View.VISIBLE
+
+        // Animate the content view to 100% opacity, and clear any animation
+        // listener set on the view.
+        spin_kit.animate()
+            .alpha(1f)
+            .setDuration(shortAnimationDuration.toLong())
+            .setListener(null)
+
     }
 }
