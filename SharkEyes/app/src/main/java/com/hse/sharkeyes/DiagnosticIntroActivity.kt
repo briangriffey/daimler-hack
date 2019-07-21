@@ -135,7 +135,7 @@ class DiagnosticIntroActivity: ReadingActivity() {
             else -> voltage = 200
         }
 
-        if(voltage >= 6) {
+        if(voltage >= 5) {
             goToStageThree()
         } else {
             goToStageSeven()
