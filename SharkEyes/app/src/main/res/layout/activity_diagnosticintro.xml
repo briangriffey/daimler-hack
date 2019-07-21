@@ -91,7 +91,7 @@
 
         <Button
                 android:id="@+id/button"
-                android:visibility="invisible"
+                
                 android:text="Go To Manual"
                 android:layout_width="0dp"
                 app:layout_constraintRight_toRightOf="parent"
