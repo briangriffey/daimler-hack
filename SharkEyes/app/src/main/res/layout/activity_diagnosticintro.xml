@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/gradient"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -8,7 +9,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:gravity="center_horizontal"
-              android:padding="16dp" android:background="@color/bg">
+              android:padding="16dp">
     <com.github.ybq.android.spinkit.SpinKitView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/spin_kit"
@@ -35,6 +36,51 @@
             android:layout_centerHorizontal="true"
             android:paddingBottom="50px"
             app:SpinKit_Color="@color/colorAccent"/>
+    <TableLayout
+            android:id="@+id/table_view"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp">
+            <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/sensor1"/>
+            <TextView
+                    android:text="Option 1. Intake Pressure/Temperature Sensor (3)	Red/Black	DKI470E16022-41	A0001505836"
+                    android:textColor="@color/white"
+                    android:padding="30px"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_column="1" />
+        </TableRow>
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp">
+            <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/sensor2"/>
+            <TextView
+                    android:text="Option 2. Intake Manifold Temperature Sensor DD13, DD15 and DD16	Red/Red	DKI470E16022-37	A0001506136"
+                    android:textColor="@color/white"
+                    android:padding="30px"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_column="1" />
+        </TableRow>
+    </TableLayout>
+    <Button
+            android:visibility="invisible"
+            android:text="Go To Manual"
+            android:layout_width="fill_parent"
+            android:layout_below="@+id/table_view"
+            android:layout_margin="20dp"
+            android:layout_height="50dp"/>
 
 </RelativeLayout>
 
