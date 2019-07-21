@@ -13,10 +13,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        spin_kit_wave.visibility = View.GONE
         crossfadeBluetoothLoadingAnimation()
         Handler().postDelayed({
-            spin_kit.visibility = View.INVISIBLE
             val intent = Intent(this@MainActivity, WorkActivity::class.java)
             startActivity(intent)
         }, 5000)
@@ -24,12 +22,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun crossfadeBluetoothLoadingAnimation() {
 
-        val shortAnimationDuration = 6000
+        val shortAnimationDuration = 1000
         // Set the content view to 0% opacity but visible, so that it is visible
         // (but fully transparent) during the animation.
         spin_kit.alpha = 0f
-        spin_kit.visibility = View.VISIBLE
-        bluetooth.visibility = View.VISIBLE
+        bluetooth.alpha= 0f
+
+        bluetooth.animate()
+            .alpha(1F)
+            .setDuration(shortAnimationDuration.toLong())
 
         // Animate the content view to 100% opacity, and clear any animation
         // listener set on the view.
