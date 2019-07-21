@@ -57,11 +57,11 @@ class DiagnosticIntroActivity: ReadingActivity() {
 
     private fun goToStageFive() {
         //Do a thing here with whatever we're doing with the choosing the probe
-        speak("Measure the voltage between pin 1 of the intake manifold pressure/temperature sensor harness connector and ground. What is the voltage?", "stage5instruction")
+        speak("Measure the voltage between pin 1 of the intake manifold pressure/temperature sensor harness connector and ground. What is the voltage?", "stage5instruction", instruction)
     }
 
     private fun goToStageSeven() {
-        speak("Check for the presence of voltage between pins 2 and 4 on the intake manifold pressure/temperature sensor harness connector. Is voltage present?", "stage7instruction")
+        speak("Check for the presence of voltage between pins 2 and 4 on the intake manifold pressure/temperature sensor harness connector. Is voltage present?", "stage7instruction", instruction)
         pauseForASecond("stage7silence")
     }
 
@@ -140,19 +140,19 @@ class DiagnosticIntroActivity: ReadingActivity() {
 
     override fun onInit(status: Int) {
         super.onInit(status)
+        tts.setOnUtteranceProgressListener(utteranceProgressListener)
 
         spin_kit_wave.visibility = GONE
         crossfadeBluetoothLoadingAnimation()
         Handler().postDelayed({
             // TODO: Also hide bluetooth icon
-            spin_kit.visibility = INVISIBLE
-            tts.setOnUtteranceProgressListener(utteranceProgressListener)
+            spin_kit.visibility = GONE
             goToStageOne()
-        }, 5000)}
+        }, 1000)}
 
     private fun crossfadeBluetoothLoadingAnimation() {
 
-        val shortAnimationDuration = 6000
+        val shortAnimationDuration = 2000
         // Set the content view to 0% opacity but visible, so that it is visible
         // (but fully transparent) during the animation.
         spin_kit.alpha = 0f

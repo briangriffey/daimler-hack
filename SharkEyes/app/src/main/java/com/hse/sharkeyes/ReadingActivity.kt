@@ -20,9 +20,9 @@ abstract class ReadingActivity: AppCompatActivity(), TextToSpeech.OnInitListener
     }
 
     protected fun speak(text: String, id: String, instructionView: TextView? = null) {
-        crossfadeLoadingAnimation(endAlpha = 1f)
+//        crossfadeLoadingAnimation(endAlpha = 1f)
         tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, id)
-        instructionView?.setText(text)
+        runOnUiThread({instructionView?.setText(text)})
         spin_kit_wave.visibility = VISIBLE
     }
 
