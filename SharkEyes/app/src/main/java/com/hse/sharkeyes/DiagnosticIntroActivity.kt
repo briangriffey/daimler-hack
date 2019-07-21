@@ -60,7 +60,7 @@ class DiagnosticIntroActivity: ReadingActivity() {
     }
 
     private fun goToStageFourAndAHalf() {
-        speak("Use the link below to determine the correct diagnostic probe part number for the Intake Manifold Pressure/Temperature Sensor.", "stage4.5instruction", instruction)
+        speak("Special Tool Required. Use the link below to determine the correct diagnostic probe part number for the Intake Manifold Pressure/Temperature Sensor.", "stage4.5instruction", instruction)
         pauseForASecond("stage4.5silence")
     }
 
