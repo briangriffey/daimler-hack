@@ -67,10 +67,11 @@ class DiagnosticIntroActivity: ReadingActivity() {
     private fun goToStageFourAndThreeQuarters() {
         runOnUiThread({instructionBG.visibility = VISIBLE})
 
-        speak("One of the following is what you're looking for, is it \n" +
-                "Option 1. Intake Pressure/Temperature Sensor DKI470E16022-41 " +
-                "or" +
-                "Option 2. Intake Manifold Temperature Sensor DD13, DD15 and DD16 - DKI470E16022-37","stage4.75")
+        speak("I found some relevant manual entries. Please choose from the following options." +
+                "One of the following is what you're looking for, is it \n" +
+                "Option 1. Intake Pressure/Temperature Sensor " +
+                "Option 2. Intake Manifold Temperature Sensor DD13, DD15 and DD16 "+
+                "Option 3. Take me to the manual","stage4.75")
 
     }
 
