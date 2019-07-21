@@ -16,13 +16,17 @@ import java.util.*
 
 class DiagnosticIntroActivity: ReadingActivity() {
 
+    val fourSevenFive = 10;
+
     private val utteranceProgressListener = object: UtteranceProgressListener() {
         override fun onDone(utteranceId: String?) {
             when(utteranceId) {
                 "stage1silence"-> goToStageTwo()
                 "stage2instruction" -> captureSpeech(2)
                 "stage5instruction" -> captureSpeech(5)
-                "stage4silence" -> goToStageFive()
+                "stage4silence" -> goToStageFourAndAHalf()
+                "stage4.5silence" -> goToStageFourAndThreeQuarters()
+                "stage4.75" -> captureSpeech(fourSevenFive)
                 "stage7silence" -> captureSpeech(7)
             }
         }
@@ -53,6 +57,18 @@ class DiagnosticIntroActivity: ReadingActivity() {
     private fun goToStageFour() {
         speak("Turn the ignition on", "stage4", instruction)
         pauseForASecond("stage4silence")
+    }
+
+    private fun goToStageFourAndAHalf() {
+        speak("Use the link below to determine the correct diagnostic probe part number for the Intake Manifold Pressure/Temperature Sensor.", "stage4.5instruction", instruction)
+        pauseForASecond("stage4.5silence")
+    }
+
+    private fun goToStageFourAndThreeQuarters() {
+        speak("One of the following is what you're looking for, is it \n" +
+                "1. Intake Pressure/Temperature Sensor DKI470E16022-41 " +
+                "or" +
+                "2. Intake Manifold Temperature Sensor DD13, DD15 and DD16 - DKI470E16022-37","stage4.75")
     }
 
     private fun goToStageFive() {
@@ -129,6 +145,7 @@ class DiagnosticIntroActivity: ReadingActivity() {
             2 -> stageTwoDecision(spokenText)
             7 -> stageSevenDecision(spokenText)
             5 -> stageFiveDecision(spokenText)
+            fourSevenFive -> goToStageFive()
         }
     }
 
