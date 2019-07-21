@@ -8,6 +8,7 @@
                                                    android:background="?attr/selectableItemBackground">
 
     <TextView
+            android:textColor="@color/white"
             android:id="@+id/diagnosticCode"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
@@ -21,6 +22,7 @@
     />
 
     <TextView
+            android:textColor="@color/white"
             android:id="@+id/diagnosticCodeValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,6 +32,7 @@
             android:text="939-1000A"/>
 
     <TextView
+            android:textColor="@color/white"
             android:id="@+id/symptom"
             android:layout_marginTop="16dp"
             android:textSize="20sp"
@@ -45,6 +48,7 @@
             android:id="@+id/symptomExplanation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="@id/symptom"
             app:layout_constraintTop_toBottomOf="@id/symptom"
             app:layout_constraintRight_toRightOf="parent"
@@ -52,6 +56,7 @@
             android:text="045-021-007 - WIRING HARNESS - ELECTRONIC ENGINE CONTROL"/>
 
     <TextView
+            android:textColor="@color/white"
             android:id="@+id/engineFamily"
             android:layout_marginTop="16dp"
             android:textSize="20sp"
@@ -64,6 +69,7 @@
     />
 
     <TextView
+            android:textColor="@color/white"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="@id/engineFamily"
